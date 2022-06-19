@@ -53,6 +53,8 @@ jobs:
           name: storybook
       - name: Deploy Storybook
         uses: actions/deploy-pages@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
   DeployLibrary:
     name: Deploy Library
     runs-on: ubuntu-latest
