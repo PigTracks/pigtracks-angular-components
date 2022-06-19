@@ -1,3 +1,4 @@
 .angular
 dist
 storybook-static
+documentation.json
