@@ -5,4 +5,4 @@ import { BannerComponent } from './banner';
   declarations: [BannerComponent],
   exports: [BannerComponent],
 })
-export class NessoComponentsModule {}
+export class PigTracksComponentsModule {}

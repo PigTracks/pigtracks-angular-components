@@ -1,0 +1,78 @@
+name: Continuous Deployment
+on:
+  pull_request: # TODO: Remove this trigger
+    branches:
+      - main
+  push:
+    branches:
+      - main
+jobs:
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install Packages
+        run: npm ci
+      - name: Build Angular Components
+        run: npm run build:angular-components
+      - name: Build Storybook
+        run: npm run build:storybook
+      - name: Lint Angular Components
+        run: npm run lint:angular-components
+      - name: Lint Storybook
+        run: npm run lint:storybook
+      - name: Prettier
+        run: npm run prettier
+      - name: Upload Angular Components
+        uses: actions/upload-artifact@v2
+        with:
+          name: angular-components
+          path: dist/angular-components
+      - name: Upload Storybook
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook
+          path: storybook-static
+  DeployStorybook:
+    name: Deploy Storybook
+    runs-on: ubuntu-latest
+    needs: [Build]
+    environment:
+      name: Design
+      url: 'https://design.pigtracks.co'
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook
+      - name: Deploy Storybook
+        uses: actions/deploy-pages@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+  DeployLibrary:
+    name: Deploy Library
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    needs: [Build]
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: angular-components
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          registry-url: 'https://npm.pkg.github.com'
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

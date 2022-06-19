@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/angular';
-import { BannerComponent } from '@nesso/angular-components';
+import { BannerComponent } from '@pigtracks/angular-components';
 
 export default {
   title: 'Components/Banner',
