@@ -3,5 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "angular-components": {
+      "projectType": "library",
+      "root": "projects/angular-components",
+      "sourceRoot": "projects/angular-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "00ae81ce-270d-4469-a236-94d9cd59027a"
   }
 }

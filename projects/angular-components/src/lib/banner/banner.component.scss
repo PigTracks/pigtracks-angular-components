@@ -1,0 +1,11 @@
+$pigtracks-orange: #ff5722;
+
+.alert {
+  align-items: center;
+  background-color: lighten($pigtracks-orange, 40%);
+  border-color: $pigtracks-orange;
+  color: $pigtracks-orange;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
