@@ -1,4 +1,13 @@
+# Node
 node_modules
+
+# IDE
 .vscode
-dist
+
+# Angular Build
 .angular
+dist
+
+# Storybook Build
+storybook-static
+documentation.json

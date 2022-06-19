@@ -2,7 +2,9 @@
   "name": "nesso-angular-components",
   "version": "0.0.0",
   "scripts": {
-    "build:angular-components": "ng build --project=angular-components"
+    "start": "ng serve --project=storybook",
+    "build:angular-components": "ng build --project=angular-components",
+    "build:storybook": "ng build --project=storybook"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,17 @@
     "@angular-devkit/build-angular": "^14.0.2",
     "@angular/cli": "~14.0.2",
     "@angular/compiler-cli": "^14.0.0",
+    "@babel/core": "^7.18.5",
+    "@compodoc/compodoc": "^1.1.19",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/angular": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5",
     "ng-packagr": "^14.0.0",
     "typescript": "~4.7.2"
   }

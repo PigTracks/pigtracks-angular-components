@@ -25,6 +25,26 @@
           "defaultConfiguration": "production"
         }
       }
+    },
+    "storybook": {
+      "projectType": "application",
+      "root": "projects/stories",
+      "sourceRoot": "projects/stories",
+      "architect": {
+        "serve": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "angular-components:build",
+            "port": 4400
+          }
+        },
+        "build": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "angular-components:build"
+          }
+        }
+      }
     }
   },
   "cli": {
