@@ -20,7 +20,9 @@ jobs:
         run: npm run build:angular-components
       - name: Build Storybook
         run: npm run build:storybook
-      - name: Lint
-        run: npm run lint
+      - name: Lint Angular Components
+        run: npm run lint:angular-components
+      - name: Lint Storybook
+        run: npm run lint:storybook
       - name: Prettier
         run: npm run prettier
