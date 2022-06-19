@@ -23,6 +23,15 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/angular-components/src/**/*.ts",
+              "projects/angular-components/src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -42,6 +51,15 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "browserTarget": "angular-components:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/stories/**/*.ts",
+              "projects/stories/**/*.html"
+            ]
           }
         }
       }

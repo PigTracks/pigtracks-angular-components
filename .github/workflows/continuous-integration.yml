@@ -1,0 +1,28 @@
+name: Continuous Integration
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install Packages
+        run: npm ci
+      - name: Build Angular Components
+        run: npm run build:angular-components
+      - name: Build Storybook
+        run: npm run build:storybook
+      - name: Lint Angular Components
+        run: npm run lint:angular-components
+      - name: Lint Storybook
+        run: npm run lint:storybook
+      - name: Prettier
+        run: npm run prettier
