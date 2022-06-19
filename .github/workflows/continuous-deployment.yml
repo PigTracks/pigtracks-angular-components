@@ -52,11 +52,7 @@ jobs:
         with:
           name: storybook
       - name: Deploy Storybook
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          branch: gh-pages
-          folder: .
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/deploy-pages@v1
   DeployLibrary:
     name: Deploy Library
     runs-on: ubuntu-latest
