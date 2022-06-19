@@ -1,5 +1,5 @@
 {
-  "name": "nesso-angular-components",
+  "name": "pigtracks-angular-components",
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve --project=storybook",

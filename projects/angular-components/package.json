@@ -1,9 +1,9 @@
 {
-  "name": "@nesso/angular-components",
+  "name": "@pigtracks/angular-components",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PigTracks/nesso-angular-components",
+    "url": "https://github.com/PigTracks/pigtracks-angular-components",
     "directory": "projects/angular-components"
   },
   "publishConfig": {

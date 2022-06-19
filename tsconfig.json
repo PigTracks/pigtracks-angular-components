@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@nesso/angular-components": ["dist/angular-components"]
+      "@pigtracks/angular-components": ["dist/angular-components"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
