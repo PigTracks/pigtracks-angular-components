@@ -4,7 +4,13 @@
   "scripts": {
     "start": "ng serve --project=storybook",
     "build:angular-components": "ng build --project=angular-components",
-    "build:storybook": "ng build --project=storybook"
+    "build:storybook": "ng build --project=storybook",
+    "lint:angular-components": "ng lint --project=angular-components",
+    "lint:angular-components:fix": "ng lint --project=angular-components --fix",
+    "lint:storybook": "ng lint --project=storybook",
+    "lint:storybook:fix": "ng lint --project=storybook --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   },
   "private": true,
   "dependencies": {
@@ -22,6 +28,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.2",
+    "@angular-eslint/builder": "^13.5.0",
+    "@angular-eslint/eslint-plugin": "^13.5.0",
+    "@angular-eslint/eslint-plugin-template": "^13.5.0",
+    "@angular-eslint/template-parser": "^13.5.0",
     "@angular/cli": "~14.0.2",
     "@angular/compiler-cli": "^14.0.0",
     "@babel/core": "^7.18.5",
@@ -34,8 +44,11 @@
     "@storybook/builder-webpack5": "^6.5.9",
     "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
     "ng-packagr": "^14.0.0",
+    "prettier": "^2.7.1",
     "typescript": "~4.7.2"
   }
 }
